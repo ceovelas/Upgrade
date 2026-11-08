@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>АПГРЕЙД — мобильная версия</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;700;900&amp;family=Playfair+Display:ital,wght@1,700;1,800&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#EDE6E0;-webkit-tap-highlight-color:transparent}
+.qa summary{list-style:none}
+.menu summary{list-style:none}
+.menu summary::-webkit-details-marker{display:none}
+.menu .b1,.menu .b2,.menu .b3{transition:transform .25s ease,opacity .2s}
+.menu[open] .b1{transform:translateY(6px) rotate(45deg)}
+.menu[open] .b2{opacity:0}
+.menu[open] .b3{transform:translateY(-6px) rotate(-45deg)}
+@keyframes drop{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:none}}
+.menu[open] .drawer{animation:drop .25s ease both}
+html{scroll-behavior:smooth}
+.qa summary::-webkit-details-marker{display:none}
+.qa .pl{transition:transform .25s ease}
+.qa[open] .pl{transform:rotate(45deg)}
+a{color:#2A211F}a:hover{color:#B5737A}
+*{box-sizing:border-box}
+.u{font-family:'Unbounded',sans-serif}
+@keyframes wordIn{from{transform:translateY(24px);opacity:0;letter-spacing:.04em}to{transform:none;opacity:1}}
+@keyframes zoom{from{transform:scale(1.08)}to{transform:scale(1)}}
+@keyframes rv{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes spinIn{from{transform:rotate(-90deg) scale(.7);opacity:0}to{transform:none;opacity:1}}
+.word{animation:wordIn 1.2s cubic-bezier(.2,.7,.2,1) both}
+.bg{animation:zoom 2.4s cubic-bezier(.2,.7,.2,1) both}
+.lib{scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.lib::-webkit-scrollbar{display:none}
+.lib > *{scroll-snap-align:start;animation:peek 5s ease-in-out 1.5s infinite}
+@keyframes peek{0%,72%,100%{transform:none}82%{transform:translateX(-22px)}}
+@keyframes nudge{0%,100%{transform:none}50%{transform:translateX(4px)}}
+.nudge svg{animation:nudge 1.2s ease-in-out infinite}
+@supports (animation-timeline: view()){
+.rv{animation:rv linear both;animation-timeline:view();animation-range:entry 5% cover 28%}
+}
+</style>
+
+<div style="background: #EDE6E0; color: #2A211F; font-family: 'Manrope', sans-serif; min-height: 100%">
+<main style="max-width: 440px; margin: 0 auto; background: #F7F2ED; overflow: hidden">
+
+  <!-- ========== 1 · ПЕРВЫЙ ЭКРАН ========== -->
+  <section style="position: relative; height: 800px; overflow: hidden">
+    <img class="bg" src="images/stretch.webp" alt="Лера Начевкина на тренировке дома" style="-webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 14%, #000 62%, transparent 82%); mask-image: linear-gradient(to bottom, transparent 0%, #000 14%, #000 62%, transparent 82%); position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 28% 30%; display: block">
+    <div style="position: absolute; inset: -2px; background: linear-gradient(to bottom, #F7F2ED 0%, rgba(247,242,237,0.55) 16%, rgba(247,242,237,0) 32%, rgba(247,242,237,0) 52%, rgba(247,242,237,0.88) 70%, #F7F2ED 80%)"></div>
+
+    <nav style="position: relative; z-index: 3; margin: 14px 14px 0; height: 52px; padding: 0 6px 0 16px; border-radius: 18px; background: rgba(255,255,255,0.72); display: flex; align-items: center; justify-content: space-between">
+      <span class="u" style="font-weight: 700; font-size: 13.5px">Leranachevkina<span style="color: #D9798A">.</span></span>
+      <details class="menu" style="position: static">
+        <summary aria-label="Меню" style="cursor: pointer; width: 42px; height: 40px; border-radius: 13px; background: #2A211F; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px">
+          <span class="b1" style="width: 16px; height: 2px; border-radius: 2px; background: #F7F2ED; display: block"></span>
+          <span class="b2" style="width: 16px; height: 2px; border-radius: 2px; background: #F7F2ED; display: block"></span>
+          <span class="b3" style="width: 16px; height: 2px; border-radius: 2px; background: #F7F2ED; display: block"></span>
+        </summary>
+        <div class="drawer" style="position: absolute; left: 0; right: 0; top: 62px; z-index: 20; background: #FFFFFF; border-radius: 24px; padding: 10px; box-shadow: 0 24px 50px -24px rgba(42,33,31,0.45); display: flex; flex-direction: column">
+          <a href="#program" style="padding: 16px 14px; font-weight: 700; font-size: 16px; text-decoration: none; border-bottom: 1px solid rgba(42,33,31,0.08)">Что внутри потока</a>
+          <a href="#guides" style="padding: 16px 14px; font-weight: 700; font-size: 16px; text-decoration: none; border-bottom: 1px solid rgba(42,33,31,0.08)">Гайды и подкасты</a>
+          <a href="#faq" style="padding: 16px 14px; font-weight: 700; font-size: 16px; text-decoration: none">Вопросы</a>
+          <a href="anketa.html" style="margin-top: 6px; height: 52px; border-radius: 16px; background: #2A211F; color: #F7F2ED; font-weight: 800; font-size: 15px; text-decoration: none; display: flex; align-items: center; justify-content: center">Присоединиться</a>
+        </div>
+      </details>
+    </nav>
+
+    <div class="word" style="position: relative; z-index: 2; margin-top: 14px; text-align: center; filter: drop-shadow(0 10px 24px rgba(201,103,122,0.35))"><span style="display: inline-block; padding: 0 10px 8px; font-family: 'Unbounded', sans-serif; font-style: normal; font-weight: 700; font-size: 56px; line-height: 1.05; letter-spacing: -0.03em; text-transform: uppercase; background: linear-gradient(180deg, #EFA7B2 0%, #D9798A 55%, #C25E73 100%); -webkit-background-clip: text; background-clip: text; color: transparent">Апгрейд</span></div>
+
+    <div style="position: absolute; z-index: 2; left: 0; right: 0; bottom: 34px; padding: 0 20px; display: flex; flex-direction: column; gap: 14px; text-align: center; align-items: center">
+      <h1 class="u" style="margin: 0; font-weight: 700; font-size: 25px; line-height: 1.15; letter-spacing: -0.02em; text-transform: uppercase">Новая версия тебя<br><span style="color: #D9798A">за 4 недели</span></h1>
+      <p style="margin: 0; font-size: 15.5px; line-height: 1.5; color: #5E4D49; max-width: 330px">Тренировки дома, питание без срывов и чат со мной на весь поток</p>
+      <a href="anketa.html" style="margin-top: 6px; width: 100%; height: 58px; border-radius: 18px; background: #2A211F; color: #F7F2ED; font-weight: 800; font-size: 16px; text-decoration: none; display: flex; align-items: center; justify-content: center">Присоединиться</a>
+      <span style="font-size: 12.5px; color: #7A6662">Старт потока: 24 ноября</span>
+    </div>
+  </section>
+
+  <!-- ========== 2 · ЧТО ВНУТРИ ========== -->
+  <section id="program" style="padding: 56px 14px 56px">
+    <h2 class="u" style="margin: 0 6px 24px; font-weight: 600; font-size: 22px; line-height: 1.2; text-transform: uppercase">Что внутри <span style="color: #D9798A">потока</span></h2>
+
+    <article class="rv" style="background: #FFFFFF; border-radius: 30px; overflow: hidden">
+      <img src="images/kick.webp" alt="Тренировка с резинкой дома" style="width: 100%; height: 340px; object-fit: cover; object-position: 50% 42%; display: block">
+      <div style="padding: 22px 20px 24px">
+        <h3 class="u" style="margin: 0 0 12px; font-weight: 700; font-size: 20px; text-transform: uppercase">Тренировки дома</h3>
+        <p style="margin: 0; font-size: 15px; line-height: 1.55; color: #5E4D49">Включаешь видео и повторяешь за мной. Работаем с глубокими мышцами живота, которые не включают ни скручивания, ни планка. Плюс спина, осанка и пропорции низа и верха.</p>
+      </div>
+    </article>
+
+    <article class="rv" style="margin-top: 12px; background: #FFFFFF; border-radius: 30px; overflow: hidden">
+      <img src="images/dessert.webp" alt="Десерт с ягодами" style="width: 100%; height: 340px; object-fit: cover; object-position: 50% 45%; display: block">
+      <div style="padding: 22px 20px 24px">
+        <h3 class="u" style="margin: 0 0 12px; font-weight: 700; font-size: 20px; line-height: 1.2; text-transform: uppercase">Питание без кухонных весов</h3>
+        <p style="margin: 0; font-size: 15px; line-height: 1.55; color: #5E4D49">Собираешь тарелку по правилу и меряешь порции ладонью. 80% нормальной еды и 20% на вкусняшки: даже кусок пиццы можно, главное правильно вписать.</p>
+      </div>
+    </article>
+
+    <article class="rv" style="margin-top: 12px; background: #FFFFFF; border-radius: 30px; overflow: hidden">
+      <img src="images/tabchat.webp" alt="Чат потока в телеграме на планшете" style="width: 100%; height: 320px; object-fit: cover; object-position: 40% 32%; display: block">
+      <div style="padding: 22px 20px 24px">
+        <h3 class="u" style="margin: 0 0 12px; font-weight: 700; font-size: 20px; text-transform: uppercase">Чат и эфиры со мной</h3>
+        <p style="margin: 0; font-size: 15px; line-height: 1.55; color: #5E4D49">Закрытый чат на все 4 недели, где девочки идут к одной цели вместе. Раз в неделю прямой эфир: разбираю ваши вопросы и рационы. Обратная связь от меня каждые 2–3 дня.</p>
+      </div>
+    </article>
+  </section>
+
+  <!-- ========== 3 · БИБЛИОТЕКА ========== -->
+  <section id="guides" style="padding: 0 0 20px">
+    <div style="padding: 0 20px">
+      <h2 class="u" style="margin: 0 0 8px; font-weight: 600; font-size: 22px; line-height: 1.2; text-transform: uppercase">Гайды и подкасты,<br><span style="color: #D9798A">которые остаются у тебя навсегда</span></h2>
+      <div style="margin: 6px 0 20px; display: inline-flex; align-items: center; gap: 10px; height: 38px; padding: 0 6px 0 16px; border-radius: 99px; background: #FFFFFF; font-size: 13.5px; font-weight: 700">Листай вправо<span class="nudge" style="width: 28px; height: 28px; border-radius: 50%; background: #D9798A; display: flex; align-items: center; justify-content: center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></div>
+    </div>
+
+    <div class="lib" style="display: flex; gap: 10px; overflow-x: auto; padding: 0 20px 6px; scroll-padding-left: 20px">
+      <div style="flex: 0 0 200px; height: 270px; border-radius: 24px; overflow: hidden">
+        <img src="images/tabguide.webp" alt="Гайд на планшете" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 55%; display: block">
+      </div>
+      <div style="flex: 0 0 200px; height: 270px; border-radius: 24px; background: #FFFFFF; position: relative; overflow: hidden; padding: 18px; display: flex; flex-direction: column; justify-content: flex-end; gap: 8px">
+        <div style="position: absolute; right: -80px; bottom: -80px; width: 260px; height: 260px; border-radius: 50%; background: radial-gradient(circle, rgba(242,196,214,0.85) 0%, rgba(242,196,214,0) 70%)"></div>
+        <svg style="position: absolute; left: 14px; top: 40px; filter: drop-shadow(0 0 16px rgba(232,140,150,0.65))" width="74" height="58" viewBox="0 0 74 58" aria-hidden="true"><path d="M2 7a5 5 0 0 1 5-5h18l7 6h35a5 5 0 0 1 5 5v40a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5z" fill="#CC7088"></path><rect x="2" y="13" width="70" height="43" rx="6" fill="#F0A0A6"></rect></svg>
+        <svg style="position: absolute; right: 18px; top: 16px" width="46" height="46" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5l2.9 7.1 7.6.6-5.8 5 1.8 7.4L12 17.6 5.5 21.6l1.8-7.4-5.8-5 7.6-.6z" fill="#F6D3E1"></path></svg>
+        <span style="position: relative; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; color: #7A6662">ГАЙД</span>
+        <span class="u" style="position: relative; font-weight: 600; font-size: 16px; line-height: 1.2">Лимфодренаж и рельеф без насилия</span>
+      </div>
+      <div style="flex: 0 0 270px; height: 270px; border-radius: 24px; overflow: hidden; background: #FFFFFF"><img src="images/g_plate.webp" alt="Гайд «Здоровая тарелка»" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
+      <div style="flex: 0 0 270px; height: 270px; border-radius: 24px; overflow: hidden; background: #FFFFFF"><img src="images/g_glutes.webp" alt="Гайд «Ягодицы и плоский живот»" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
+      <div style="flex: 0 0 270px; height: 270px; border-radius: 24px; overflow: hidden; background: #FFFFFF"><img src="images/g_kusach.webp" alt="Гайд «Кусачество»" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
+      <div style="flex: 0 0 270px; height: 270px; border-radius: 24px; overflow: hidden; background: #FFFFFF"><img src="images/g_queen.webp" alt="Гайд «Королева своей жизни»" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
+      <div style="flex: 0 0 190px; height: 270px; border-radius: 24px; overflow: hidden; background: #FFFFFF"><img src="images/g_menu.webp" alt="Гайд «Меню для твоего стройного тела»" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
+      <div style="flex: 0 0 218px; height: 270px; border-radius: 24px; overflow: hidden; background: #212A36"><img src="images/p_motiv.webp" alt="Подкаст «Ловушка мотивации»" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 0%; display: block"></div>
+      <div style="flex: 0 0 185px; height: 270px; border-radius: 24px; overflow: hidden; background: #212A36"><img src="images/p_trig.webp" alt="Гид «Продукты-триггеры»" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 0%; display: block"></div>
+      <div style="flex: 0 0 198px; height: 270px; border-radius: 24px; overflow: hidden; background: #212A36"><img src="images/p_sweet.webp" alt="Подборка сладостей" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 0%; display: block"></div>
+    </div>
+  </section>
+
+  <!-- ========== 4 · ФИНАЛ ========== -->
+  <section id="join" style="position: relative; margin-top: 40px; height: 560px; overflow: hidden">
+    <img src="images/dumb.webp" alt="" style="-webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 22%, #000 70%, transparent 96%); mask-image: linear-gradient(to bottom, transparent 0%, #000 22%, #000 70%, transparent 96%); position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%; display: block">
+    <div style="position: absolute; inset: -2px; background: linear-gradient(to bottom, #F7F2ED 0%, #F7F2ED 4%, rgba(247,242,237,0.2) 40%, rgba(247,242,237,0.85) 78%, #F7F2ED 97%)"></div>
+    <div style="position: absolute; left: 20px; right: 20px; top: 0; text-align: center">
+      <span style="font-size: 12px; font-weight: 700; letter-spacing: 0.14em; color: #7A6662">СТАРТ ПОТОКА</span>
+      <p class="u" style="margin: 8px 0 0; font-weight: 900; font-size: 56px; line-height: 1; letter-spacing: -0.04em">24.11</p>
+    </div>
+    <div style="position: absolute; left: 20px; right: 20px; bottom: 36px; display: flex; flex-direction: column; gap: 12px; align-items: center; text-align: center">
+      <p style="margin: 0; font-size: 15.5px; line-height: 1.5; font-weight: 600; max-width: 320px">4 недели тренировок, питания и поддержки. Начинаем вместе</p>
+      <a href="anketa.html" style="width: 100%; height: 60px; border-radius: 18px; background: #2A211F; color: #F7F2ED; font-weight: 800; font-size: 16px; text-decoration: none; display: flex; align-items: center; justify-content: center">Присоединиться</a>
+    </div>
+  </section>
+
+
+  <!-- ========== 5 · ВОПРОСЫ ========== -->
+  <section id="faq" style="padding: 56px 16px 20px">
+    <h2 class="u" style="margin: 0 4px 22px; font-weight: 600; font-size: 22px; line-height: 1.2; text-transform: uppercase">Остались <span style="color: #D9798A">вопросы?</span></h2>
+    <div style="display: flex; flex-direction: column; gap: 8px">
+      <details class="qa" style="background: #FFFFFF; border-radius: 22px; padding: 0 18px">
+        <summary style="cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 14px; min-height: 64px; padding: 14px 0; font-weight: 700; font-size: 15.5px; line-height: 1.35">Как проходит поток?<span class="pl" style="flex-shrink: 0; width: 30px; height: 30px; border-radius: 50%; background: #F2E1DF; display: flex; align-items: center; justify-content: center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2A211F" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></span></summary>
+        <p style="margin: 0 0 18px; font-size: 14.5px; line-height: 1.55; color: #5E4D49">Старт 24 ноября, длится 4 недели. Все материалы лежат в закрытом канале, а в чате мы общаемся, делимся результатами и поддерживаем друг друга. Раз в неделю эфир, обратная связь от меня каждые 2–3 дня.</p>
+      </details>
+      <details class="qa" style="background: #FFFFFF; border-radius: 22px; padding: 0 18px">
+        <summary style="cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 14px; min-height: 64px; padding: 14px 0; font-weight: 700; font-size: 15.5px; line-height: 1.35">Обязательно скидывать фото до и после?<span class="pl" style="flex-shrink: 0; width: 30px; height: 30px; border-radius: 50%; background: #F2E1DF; display: flex; align-items: center; justify-content: center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2A211F" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></span></summary>
+        <p style="margin: 0 0 18px; font-size: 14.5px; line-height: 1.55; color: #5E4D49">Нет. Фото нужны в первую очередь тебе, чтобы видеть прогресс, даже когда весы стоят. Можешь прислать их мне в личку, а не в общий чат, или не присылать вовсе.</p>
+      </details>
+      <details class="qa" style="background: #FFFFFF; border-radius: 22px; padding: 0 18px">
+        <summary style="cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 14px; min-height: 64px; padding: 14px 0; font-weight: 700; font-size: 15.5px; line-height: 1.35">Нужно будет считать калории?<span class="pl" style="flex-shrink: 0; width: 30px; height: 30px; border-radius: 50%; background: #F2E1DF; display: flex; align-items: center; justify-content: center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2A211F" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></span></summary>
+        <p style="margin: 0 0 18px; font-size: 14.5px; line-height: 1.55; color: #5E4D49">Не обязательно. Можно идти по правилу тарелки и мерить порции ладонью, а можно считать, если тебе так спокойнее.</p>
+      </details>
+      <details class="qa" style="background: #FFFFFF; border-radius: 22px; padding: 0 18px">
+        <summary style="cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 14px; min-height: 64px; padding: 14px 0; font-weight: 700; font-size: 15.5px; line-height: 1.35">Раньше не получалось. Почему сейчас получится?<span class="pl" style="flex-shrink: 0; width: 30px; height: 30px; border-radius: 50%; background: #F2E1DF; display: flex; align-items: center; justify-content: center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2A211F" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></span></summary>
+        <p style="margin: 0 0 18px; font-size: 14.5px; line-height: 1.55; color: #5E4D49">Здесь нет жёстких диет и марафона на силе воли. Ты ешь нормальную еду, тренируешься дома и не остаёшься одна: я рядом весь поток и вижу, где ты буксуешь.</p>
+      </details>
+      <details class="qa" style="background: #FFFFFF; border-radius: 22px; padding: 0 18px">
+        <summary style="cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 14px; min-height: 64px; padding: 14px 0; font-weight: 700; font-size: 15.5px; line-height: 1.35">Что останется после потока?<span class="pl" style="flex-shrink: 0; width: 30px; height: 30px; border-radius: 50%; background: #F2E1DF; display: flex; align-items: center; justify-content: center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2A211F" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></span></summary>
+        <p style="margin: 0 0 18px; font-size: 14.5px; line-height: 1.55; color: #5E4D49">Гайды, подкасты и записи эфиров остаются у тебя навсегда. Возвращайся к ним сколько угодно.</p>
+      </details>
+    </div>
+    <a href="https://t.me/leranach" target="_blank" rel="noopener" style="margin: 14px auto 0; width: fit-content; height: 48px; padding: 0 22px; border-radius: 99px; background: #F2E1DF; color: #2A211F; font-weight: 700; font-size: 14.5px; text-decoration: none; display: flex; align-items: center; justify-content: center">Не нашла ответ? Напиши мне</a>
+  </section>
+
+  <!-- ========== 6 · ПОДВАЛ ========== -->
+  <footer style="margin-top: 56px; padding: 40px 20px 40px; background: #2A211F; color: #F7F2ED; display: flex; flex-direction: column; gap: 24px">
+    <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px">
+      <span class="u" style="font-weight: 700; font-size: 15px">Leranachevkina<span style="color: #E8A3AF">.</span></span>
+      <a href="https://t.me/leranach" target="_blank" rel="noopener" style="height: 40px; padding: 0 16px; border-radius: 13px; background: #E8C3C2; color: #2A211F; font-size: 13px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center">Telegram</a>
+    </div>
+    <nav style="display: flex; flex-direction: column; gap: 12px; font-size: 13.5px">
+      <a href="#privacy" style="color: #D9CBC6">Политика обработки персональных данных</a>
+      <a href="#consent" style="color: #D9CBC6">Согласие на обработку персональных данных</a>
+      <a href="#ads" style="color: #D9CBC6">Согласие на получение информационной и рекламной рассылки</a>
+      <a href="#offer" style="color: #D9CBC6">Публичная оферта</a>
+    </nav>
+    <div style="padding-top: 18px; border-top: 1px solid rgba(247,242,237,0.12); font-size: 12.5px; line-height: 1.6; color: #B8A8A3">[ФИО], ИНН [ИНН]<br>© 2026 Leranachevkina. Все права защищены</div>
+  </footer>
+
+</main>
+</div>
+
+<script>document.querySelectorAll(".menu .drawer a").forEach(function(a){a.addEventListener("click",function(){a.closest("details").open=false})});</script>
+</body>
+</html>
