@@ -58,7 +58,9 @@ html{scroll-behavior:smooth}
 .lera{animation:rise 1.2s .2s cubic-bezier(.2,.7,.2,1) both}
 .hcopy > *{animation:fadeUp .9s cubic-bezier(.2,.7,.2,1) both}
 .hcopy > *:nth-child(2){animation-delay:.1s}.hcopy > *:nth-child(3){animation-delay:.2s}.hcopy > *:nth-child(4){animation-delay:.3s}.hcopy > *:nth-child(5){animation-delay:.4s}
-.track{animation:run 60s linear infinite}
+.track{animation:run 90s linear infinite;will-change:transform}
+@keyframes run3{from{transform:translateX(0)}to{transform:translateX(-33.3333%)}}
+.track{animation-name:run3}
 .marq:hover .track{animation-play-state:paused}
 .qa summary{list-style:none}.qa summary::-webkit-details-marker{display:none}
 .qa .pl{transition:transform .25s ease}.qa[open] .pl{transform:rotate(45deg)}
@@ -120,7 +122,7 @@ body{margin:0;background:#EDE6E0}
     <h2 class="u" style="margin: 0 6px 24px; font-weight: 600; font-size: 22px; line-height: 1.2; text-transform: uppercase">Что внутри <span style="color: #D9798A">потока</span></h2>
 
     <article class="rv" style="background: #FFFFFF; border-radius: 30px; overflow: hidden">
-      <img loading="lazy" src="images/kick.webp" alt="Тренировка с резинкой дома" style="width: 100%; height: 340px; object-fit: cover; object-position: 50% 42%; display: block">
+      <img src="images/kick.webp" alt="Тренировка с резинкой дома" style="width: 100%; height: 340px; object-fit: cover; object-position: 50% 42%; display: block">
       <div style="padding: 22px 20px 24px">
         <h3 class="u" style="margin: 0 0 12px; font-weight: 700; font-size: 20px; text-transform: uppercase">Тренировки дома</h3>
         <p style="margin: 0; font-size: 15px; line-height: 1.55; color: #5E4D49">Включаешь видео и повторяешь за мной. Работаем с глубокими мышцами живота, которые не включают ни скручивания, ни планка. Плюс спина, осанка и пропорции низа и верха.</p>
@@ -128,7 +130,7 @@ body{margin:0;background:#EDE6E0}
     </article>
 
     <article class="rv" style="margin-top: 12px; background: #FFFFFF; border-radius: 30px; overflow: hidden">
-      <img loading="lazy" src="images/dessert.webp" alt="Десерт с ягодами" style="width: 100%; height: 340px; object-fit: cover; object-position: 50% 45%; display: block">
+      <img src="images/dessert.webp" alt="Десерт с ягодами" style="width: 100%; height: 340px; object-fit: cover; object-position: 50% 45%; display: block">
       <div style="padding: 22px 20px 24px">
         <h3 class="u" style="margin: 0 0 12px; font-weight: 700; font-size: 20px; line-height: 1.2; text-transform: uppercase">Питание без кухонных весов</h3>
         <p style="margin: 0; font-size: 15px; line-height: 1.55; color: #5E4D49">Собираешь тарелку по правилу и меряешь порции ладонью. 80% нормальной еды и 20% на вкусняшки: даже кусок пиццы можно, главное правильно вписать.</p>
@@ -136,7 +138,7 @@ body{margin:0;background:#EDE6E0}
     </article>
 
     <article class="rv" style="margin-top: 12px; background: #FFFFFF; border-radius: 30px; overflow: hidden">
-      <img loading="lazy" src="images/tabchat.webp" alt="Чат потока в телеграме на планшете" style="width: 100%; height: 320px; object-fit: cover; object-position: 40% 32%; display: block">
+      <img src="images/tabchat.webp" alt="Чат потока в телеграме на планшете" style="width: 100%; height: 320px; object-fit: cover; object-position: 40% 32%; display: block">
       <div style="padding: 22px 20px 24px">
         <h3 class="u" style="margin: 0 0 12px; font-weight: 700; font-size: 20px; text-transform: uppercase">Чат и эфиры со мной</h3>
         <p style="margin: 0; font-size: 15px; line-height: 1.55; color: #5E4D49">Закрытый чат на все 4 недели, где девочки идут к одной цели вместе. Раз в неделю прямой эфир: разбираю ваши вопросы и рационы. Обратная связь от меня каждые 2–3 дня.</p>
@@ -153,7 +155,7 @@ body{margin:0;background:#EDE6E0}
 
     <div class="lib" style="display: flex; gap: 10px; overflow-x: auto; padding: 0 20px 6px; scroll-padding-left: 20px">
       <div style="flex: 0 0 200px; height: 270px; border-radius: 24px; overflow: hidden">
-        <img loading="lazy" src="images/tabguide.webp" alt="Гайд на планшете" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 55%; display: block">
+        <img src="images/tabguide.webp" alt="Гайд на планшете" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 55%; display: block">
       </div>
       <div style="flex: 0 0 200px; height: 270px; border-radius: 24px; background: #FFFFFF; position: relative; overflow: hidden; padding: 18px; display: flex; flex-direction: column; justify-content: flex-end; gap: 8px">
         <div style="position: absolute; right: -80px; bottom: -80px; width: 260px; height: 260px; border-radius: 50%; background: radial-gradient(circle, rgba(242,196,214,0.85) 0%, rgba(242,196,214,0) 70%)"></div>
@@ -162,20 +164,20 @@ body{margin:0;background:#EDE6E0}
         <span style="position: relative; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; color: #7A6662">ГАЙД</span>
         <span class="u" style="position: relative; font-weight: 600; font-size: 16px; line-height: 1.2">Лимфодренаж и рельеф без насилия</span>
       </div>
-      <div style="flex: 0 0 270px; height: 270px; border-radius: 24px; overflow: hidden; background: #FFFFFF"><img loading="lazy" src="images/g_plate.webp" alt="Гайд «Здоровая тарелка»" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
-      <div style="flex: 0 0 270px; height: 270px; border-radius: 24px; overflow: hidden; background: #FFFFFF"><img loading="lazy" src="images/g_glutes.webp" alt="Гайд «Ягодицы и плоский живот»" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
-      <div style="flex: 0 0 270px; height: 270px; border-radius: 24px; overflow: hidden; background: #FFFFFF"><img loading="lazy" src="images/g_kusach.webp" alt="Гайд «Кусачество»" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
-      <div style="flex: 0 0 270px; height: 270px; border-radius: 24px; overflow: hidden; background: #FFFFFF"><img loading="lazy" src="images/g_queen.webp" alt="Гайд «Королева своей жизни»" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
-      <div style="flex: 0 0 190px; height: 270px; border-radius: 24px; overflow: hidden; background: #FFFFFF"><img loading="lazy" src="images/g_menu.webp" alt="Гайд «Меню для твоего стройного тела»" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
-      <div style="flex: 0 0 218px; height: 270px; border-radius: 24px; overflow: hidden; background: #212A36"><img loading="lazy" src="images/p_motiv.webp" alt="Подкаст «Ловушка мотивации»" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 0%; display: block"></div>
-      <div style="flex: 0 0 185px; height: 270px; border-radius: 24px; overflow: hidden; background: #212A36"><img loading="lazy" src="images/p_trig.webp" alt="Гид «Продукты-триггеры»" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 0%; display: block"></div>
-      <div style="flex: 0 0 198px; height: 270px; border-radius: 24px; overflow: hidden; background: #212A36"><img loading="lazy" src="images/p_sweet.webp" alt="Подборка сладостей" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 0%; display: block"></div>
+      <div style="flex: 0 0 270px; height: 270px; border-radius: 24px; overflow: hidden; background: #FFFFFF"><img src="images/g_plate.webp" alt="Гайд «Здоровая тарелка»" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
+      <div style="flex: 0 0 270px; height: 270px; border-radius: 24px; overflow: hidden; background: #FFFFFF"><img src="images/g_glutes.webp" alt="Гайд «Ягодицы и плоский живот»" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
+      <div style="flex: 0 0 270px; height: 270px; border-radius: 24px; overflow: hidden; background: #FFFFFF"><img src="images/g_kusach.webp" alt="Гайд «Кусачество»" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
+      <div style="flex: 0 0 270px; height: 270px; border-radius: 24px; overflow: hidden; background: #FFFFFF"><img src="images/g_queen.webp" alt="Гайд «Королева своей жизни»" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
+      <div style="flex: 0 0 190px; height: 270px; border-radius: 24px; overflow: hidden; background: #FFFFFF"><img src="images/g_menu.webp" alt="Гайд «Меню для твоего стройного тела»" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
+      <div style="flex: 0 0 218px; height: 270px; border-radius: 24px; overflow: hidden; background: #212A36"><img src="images/p_motiv.webp" alt="Подкаст «Ловушка мотивации»" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 0%; display: block"></div>
+      <div style="flex: 0 0 185px; height: 270px; border-radius: 24px; overflow: hidden; background: #212A36"><img src="images/p_trig.webp" alt="Гид «Продукты-триггеры»" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 0%; display: block"></div>
+      <div style="flex: 0 0 198px; height: 270px; border-radius: 24px; overflow: hidden; background: #212A36"><img src="images/p_sweet.webp" alt="Подборка сладостей" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 0%; display: block"></div>
     </div>
   </section>
 
   <!-- ========== 4 · ФИНАЛ ========== -->
   <section id="join" style="position: relative; margin-top: 40px; height: 560px; overflow: hidden">
-    <img loading="lazy" src="images/dumb.webp" alt="" style="-webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 22%, #000 70%, transparent 96%); mask-image: linear-gradient(to bottom, transparent 0%, #000 22%, #000 70%, transparent 96%); position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%; display: block">
+    <img src="images/dumb.webp" alt="" style="-webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 22%, #000 70%, transparent 96%); mask-image: linear-gradient(to bottom, transparent 0%, #000 22%, #000 70%, transparent 96%); position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%; display: block">
     <div style="position: absolute; inset: -2px; background: linear-gradient(to bottom, #F7F2ED 0%, #F7F2ED 4%, rgba(247,242,237,0.2) 40%, rgba(247,242,237,0.85) 78%, #F7F2ED 97%)"></div>
     <div style="position: absolute; left: 20px; right: 20px; top: 0; text-align: center">
       <span style="font-size: 12px; font-weight: 700; letter-spacing: 0.14em; color: #7A6662">СТАРТ ПОТОКА</span>
@@ -276,21 +278,21 @@ body{margin:0;background:#EDE6E0}
     <h2 class="u rv" style="margin: 0 0 36px; font-weight: 600; font-size: 40px; line-height: 1.15; text-transform: uppercase">Что внутри <span style="color: #D9798A">потока</span></h2>
     <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px">
       <article class="card rv" style="background: #FFFFFF; border-radius: 32px; overflow: hidden">
-        <img loading="lazy" src="images/kick.webp" alt="Тренировка с резинкой дома" style="width: 100%; height: 380px; object-fit: cover; object-position: 50% 42%; display: block">
+        <img src="images/kick.webp" alt="Тренировка с резинкой дома" style="width: 100%; height: 380px; object-fit: cover; object-position: 50% 42%; display: block">
         <div style="padding: 26px 26px 30px">
           <h3 class="u" style="margin: 0 0 12px; font-weight: 700; font-size: 21px; text-transform: uppercase">Тренировки дома</h3>
           <p style="margin: 0; font-size: 15.5px; line-height: 1.6; color: #5E4D49">Включаешь видео и повторяешь за мной. Работаем с глубокими мышцами живота, которые не включают ни скручивания, ни планка. Плюс спина, осанка и пропорции низа и верха.</p>
         </div>
       </article>
       <article class="card rv" style="background: #FFFFFF; border-radius: 32px; overflow: hidden">
-        <img loading="lazy" src="images/dessert.webp" alt="Десерт с ягодами" style="width: 100%; height: 380px; object-fit: cover; object-position: 50% 45%; display: block">
+        <img src="images/dessert.webp" alt="Десерт с ягодами" style="width: 100%; height: 380px; object-fit: cover; object-position: 50% 45%; display: block">
         <div style="padding: 26px 26px 30px">
           <h3 class="u" style="margin: 0 0 12px; font-weight: 700; font-size: 21px; text-transform: uppercase">Питание без кухонных весов</h3>
           <p style="margin: 0; font-size: 15.5px; line-height: 1.6; color: #5E4D49">Собираешь тарелку по правилу и меряешь порции ладонью. 80% нормальной еды и 20% на вкусняшки: даже кусок пиццы можно, главное правильно вписать.</p>
         </div>
       </article>
       <article class="card rv" style="background: #FFFFFF; border-radius: 32px; overflow: hidden">
-        <img loading="lazy" src="images/tabchat.webp" alt="Чат потока в телеграме на планшете" style="width: 100%; height: 380px; object-fit: cover; object-position: 40% 32%; display: block">
+        <img src="images/tabchat.webp" alt="Чат потока в телеграме на планшете" style="width: 100%; height: 380px; object-fit: cover; object-position: 40% 32%; display: block">
         <div style="padding: 26px 26px 30px">
           <h3 class="u" style="margin: 0 0 12px; font-weight: 700; font-size: 21px; text-transform: uppercase">Чат и эфиры со мной</h3>
           <p style="margin: 0; font-size: 15.5px; line-height: 1.6; color: #5E4D49">Закрытый чат на все 4 недели, где девочки идут к одной цели вместе. Раз в неделю прямой эфир: разбираю ваши вопросы и рационы. Обратная связь от меня каждые 2–3 дня.</p>
@@ -309,7 +311,7 @@ body{margin:0;background:#EDE6E0}
       <div class="track" style="display: flex; gap: 14px; width: max-content">
         
           <div style="display: flex; gap: 14px">
-            <div class="gc" style="flex: 0 0 255px; height: 345px; border-radius: 28px; overflow: hidden"><img loading="lazy" src="images/tabguide.webp" alt="Гайд на планшете" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 55%; display: block"></div>
+            <div class="gc" style="flex: 0 0 255px; height: 345px; border-radius: 28px; overflow: hidden"><img src="images/tabguide.webp" alt="Гайд на планшете" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 55%; display: block"></div>
             <div class="gc" style="flex: 0 0 255px; height: 345px; border-radius: 28px; background: #FFFFFF; position: relative; overflow: hidden; padding: 22px; display: flex; flex-direction: column; justify-content: flex-end; gap: 8px">
               <div style="position: absolute; right: -90px; bottom: -90px; width: 320px; height: 320px; border-radius: 50%; background: radial-gradient(circle, rgba(242,196,214,0.85) 0%, rgba(242,196,214,0) 70%)"></div>
               <svg style="position: absolute; left: 18px; top: 52px; filter: drop-shadow(0 0 18px rgba(232,140,150,0.65))" width="92" height="72" viewBox="0 0 74 58" aria-hidden="true"><path d="M2 7a5 5 0 0 1 5-5h18l7 6h35a5 5 0 0 1 5 5v40a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5z" fill="#CC7088"></path><rect x="2" y="13" width="70" height="43" rx="6" fill="#F0A0A6"></rect></svg>
@@ -317,18 +319,18 @@ body{margin:0;background:#EDE6E0}
               <span style="position: relative; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; color: #7A6662">ГАЙД</span>
               <span class="u" style="position: relative; font-weight: 600; font-size: 19px; line-height: 1.2">Лимфодренаж и рельеф без насилия</span>
             </div>
-            <div class="gc" style="flex: 0 0 345px; height: 345px; border-radius: 28px; overflow: hidden"><img loading="lazy" src="images/g_plate.webp" alt="Гайд «Здоровая тарелка»" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
-            <div class="gc" style="flex: 0 0 345px; height: 345px; border-radius: 28px; overflow: hidden"><img loading="lazy" src="images/g_glutes.webp" alt="Гайд «Ягодицы и плоский живот»" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
-            <div class="gc" style="flex: 0 0 345px; height: 345px; border-radius: 28px; overflow: hidden"><img loading="lazy" src="images/g_kusach.webp" alt="Гайд «Кусачество»" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
-            <div class="gc" style="flex: 0 0 345px; height: 345px; border-radius: 28px; overflow: hidden"><img loading="lazy" src="images/g_queen.webp" alt="Гайд «Королева своей жизни»" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
-            <div class="gc" style="flex: 0 0 243px; height: 345px; border-radius: 28px; overflow: hidden"><img loading="lazy" src="images/g_menu.webp" alt="Гайд «Меню для твоего стройного тела»" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
-            <div class="gc" style="flex: 0 0 278px; height: 345px; border-radius: 28px; overflow: hidden; background: #212A36"><img loading="lazy" src="images/p_motiv.webp" alt="Подкаст «Ловушка мотивации»" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 0%; display: block"></div>
-            <div class="gc" style="flex: 0 0 236px; height: 345px; border-radius: 28px; overflow: hidden; background: #212A36"><img loading="lazy" src="images/p_trig.webp" alt="Гид «Продукты-триггеры»" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 0%; display: block"></div>
-            <div class="gc" style="flex: 0 0 253px; height: 345px; border-radius: 28px; overflow: hidden; background: #212A36; margin-right: 0"><img loading="lazy" src="images/p_sweet.webp" alt="Подборка сладостей" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 0%; display: block"></div>
+            <div class="gc" style="flex: 0 0 345px; height: 345px; border-radius: 28px; overflow: hidden"><img src="images/g_plate.webp" alt="Гайд «Здоровая тарелка»" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
+            <div class="gc" style="flex: 0 0 345px; height: 345px; border-radius: 28px; overflow: hidden"><img src="images/g_glutes.webp" alt="Гайд «Ягодицы и плоский живот»" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
+            <div class="gc" style="flex: 0 0 345px; height: 345px; border-radius: 28px; overflow: hidden"><img src="images/g_kusach.webp" alt="Гайд «Кусачество»" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
+            <div class="gc" style="flex: 0 0 345px; height: 345px; border-radius: 28px; overflow: hidden"><img src="images/g_queen.webp" alt="Гайд «Королева своей жизни»" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
+            <div class="gc" style="flex: 0 0 243px; height: 345px; border-radius: 28px; overflow: hidden"><img src="images/g_menu.webp" alt="Гайд «Меню для твоего стройного тела»" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
+            <div class="gc" style="flex: 0 0 278px; height: 345px; border-radius: 28px; overflow: hidden; background: #212A36"><img src="images/p_motiv.webp" alt="Подкаст «Ловушка мотивации»" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 0%; display: block"></div>
+            <div class="gc" style="flex: 0 0 236px; height: 345px; border-radius: 28px; overflow: hidden; background: #212A36"><img src="images/p_trig.webp" alt="Гид «Продукты-триггеры»" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 0%; display: block"></div>
+            <div class="gc" style="flex: 0 0 253px; height: 345px; border-radius: 28px; overflow: hidden; background: #212A36; margin-right: 0"><img src="images/p_sweet.webp" alt="Подборка сладостей" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 0%; display: block"></div>
           </div>
         
           <div style="display: flex; gap: 14px">
-            <div class="gc" style="flex: 0 0 255px; height: 345px; border-radius: 28px; overflow: hidden"><img loading="lazy" src="images/tabguide.webp" alt="Гайд на планшете" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 55%; display: block"></div>
+            <div class="gc" style="flex: 0 0 255px; height: 345px; border-radius: 28px; overflow: hidden"><img src="images/tabguide.webp" alt="Гайд на планшете" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 55%; display: block"></div>
             <div class="gc" style="flex: 0 0 255px; height: 345px; border-radius: 28px; background: #FFFFFF; position: relative; overflow: hidden; padding: 22px; display: flex; flex-direction: column; justify-content: flex-end; gap: 8px">
               <div style="position: absolute; right: -90px; bottom: -90px; width: 320px; height: 320px; border-radius: 50%; background: radial-gradient(circle, rgba(242,196,214,0.85) 0%, rgba(242,196,214,0) 70%)"></div>
               <svg style="position: absolute; left: 18px; top: 52px; filter: drop-shadow(0 0 18px rgba(232,140,150,0.65))" width="92" height="72" viewBox="0 0 74 58" aria-hidden="true"><path d="M2 7a5 5 0 0 1 5-5h18l7 6h35a5 5 0 0 1 5 5v40a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5z" fill="#CC7088"></path><rect x="2" y="13" width="70" height="43" rx="6" fill="#F0A0A6"></rect></svg>
@@ -336,14 +338,33 @@ body{margin:0;background:#EDE6E0}
               <span style="position: relative; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; color: #7A6662">ГАЙД</span>
               <span class="u" style="position: relative; font-weight: 600; font-size: 19px; line-height: 1.2">Лимфодренаж и рельеф без насилия</span>
             </div>
-            <div class="gc" style="flex: 0 0 345px; height: 345px; border-radius: 28px; overflow: hidden"><img loading="lazy" src="images/g_plate.webp" alt="Гайд «Здоровая тарелка»" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
-            <div class="gc" style="flex: 0 0 345px; height: 345px; border-radius: 28px; overflow: hidden"><img loading="lazy" src="images/g_glutes.webp" alt="Гайд «Ягодицы и плоский живот»" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
-            <div class="gc" style="flex: 0 0 345px; height: 345px; border-radius: 28px; overflow: hidden"><img loading="lazy" src="images/g_kusach.webp" alt="Гайд «Кусачество»" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
-            <div class="gc" style="flex: 0 0 345px; height: 345px; border-radius: 28px; overflow: hidden"><img loading="lazy" src="images/g_queen.webp" alt="Гайд «Королева своей жизни»" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
-            <div class="gc" style="flex: 0 0 243px; height: 345px; border-radius: 28px; overflow: hidden"><img loading="lazy" src="images/g_menu.webp" alt="Гайд «Меню для твоего стройного тела»" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
-            <div class="gc" style="flex: 0 0 278px; height: 345px; border-radius: 28px; overflow: hidden; background: #212A36"><img loading="lazy" src="images/p_motiv.webp" alt="Подкаст «Ловушка мотивации»" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 0%; display: block"></div>
-            <div class="gc" style="flex: 0 0 236px; height: 345px; border-radius: 28px; overflow: hidden; background: #212A36"><img loading="lazy" src="images/p_trig.webp" alt="Гид «Продукты-триггеры»" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 0%; display: block"></div>
-            <div class="gc" style="flex: 0 0 253px; height: 345px; border-radius: 28px; overflow: hidden; background: #212A36; margin-right: 0"><img loading="lazy" src="images/p_sweet.webp" alt="Подборка сладостей" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 0%; display: block"></div>
+            <div class="gc" style="flex: 0 0 345px; height: 345px; border-radius: 28px; overflow: hidden"><img src="images/g_plate.webp" alt="Гайд «Здоровая тарелка»" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
+            <div class="gc" style="flex: 0 0 345px; height: 345px; border-radius: 28px; overflow: hidden"><img src="images/g_glutes.webp" alt="Гайд «Ягодицы и плоский живот»" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
+            <div class="gc" style="flex: 0 0 345px; height: 345px; border-radius: 28px; overflow: hidden"><img src="images/g_kusach.webp" alt="Гайд «Кусачество»" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
+            <div class="gc" style="flex: 0 0 345px; height: 345px; border-radius: 28px; overflow: hidden"><img src="images/g_queen.webp" alt="Гайд «Королева своей жизни»" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
+            <div class="gc" style="flex: 0 0 243px; height: 345px; border-radius: 28px; overflow: hidden"><img src="images/g_menu.webp" alt="Гайд «Меню для твоего стройного тела»" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
+            <div class="gc" style="flex: 0 0 278px; height: 345px; border-radius: 28px; overflow: hidden; background: #212A36"><img src="images/p_motiv.webp" alt="Подкаст «Ловушка мотивации»" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 0%; display: block"></div>
+            <div class="gc" style="flex: 0 0 236px; height: 345px; border-radius: 28px; overflow: hidden; background: #212A36"><img src="images/p_trig.webp" alt="Гид «Продукты-триггеры»" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 0%; display: block"></div>
+            <div class="gc" style="flex: 0 0 253px; height: 345px; border-radius: 28px; overflow: hidden; background: #212A36; margin-right: 0"><img src="images/p_sweet.webp" alt="Подборка сладостей" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 0%; display: block"></div>
+          </div>
+        
+          <div style="display: flex; gap: 14px">
+            <div class="gc" style="flex: 0 0 255px; height: 345px; border-radius: 28px; overflow: hidden"><img src="images/tabguide.webp" alt="Гайд на планшете" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 55%; display: block"></div>
+            <div class="gc" style="flex: 0 0 255px; height: 345px; border-radius: 28px; background: #FFFFFF; position: relative; overflow: hidden; padding: 22px; display: flex; flex-direction: column; justify-content: flex-end; gap: 8px">
+              <div style="position: absolute; right: -90px; bottom: -90px; width: 320px; height: 320px; border-radius: 50%; background: radial-gradient(circle, rgba(242,196,214,0.85) 0%, rgba(242,196,214,0) 70%)"></div>
+              <svg style="position: absolute; left: 18px; top: 52px; filter: drop-shadow(0 0 18px rgba(232,140,150,0.65))" width="92" height="72" viewBox="0 0 74 58" aria-hidden="true"><path d="M2 7a5 5 0 0 1 5-5h18l7 6h35a5 5 0 0 1 5 5v40a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5z" fill="#CC7088"></path><rect x="2" y="13" width="70" height="43" rx="6" fill="#F0A0A6"></rect></svg>
+              <svg style="position: absolute; right: 22px; top: 20px" width="56" height="56" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5l2.9 7.1 7.6.6-5.8 5 1.8 7.4L12 17.6 5.5 21.6l1.8-7.4-5.8-5 7.6-.6z" fill="#F6D3E1"></path></svg>
+              <span style="position: relative; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; color: #7A6662">ГАЙД</span>
+              <span class="u" style="position: relative; font-weight: 600; font-size: 19px; line-height: 1.2">Лимфодренаж и рельеф без насилия</span>
+            </div>
+            <div class="gc" style="flex: 0 0 345px; height: 345px; border-radius: 28px; overflow: hidden"><img src="images/g_plate.webp" alt="Гайд «Здоровая тарелка»" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
+            <div class="gc" style="flex: 0 0 345px; height: 345px; border-radius: 28px; overflow: hidden"><img src="images/g_glutes.webp" alt="Гайд «Ягодицы и плоский живот»" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
+            <div class="gc" style="flex: 0 0 345px; height: 345px; border-radius: 28px; overflow: hidden"><img src="images/g_kusach.webp" alt="Гайд «Кусачество»" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
+            <div class="gc" style="flex: 0 0 345px; height: 345px; border-radius: 28px; overflow: hidden"><img src="images/g_queen.webp" alt="Гайд «Королева своей жизни»" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
+            <div class="gc" style="flex: 0 0 243px; height: 345px; border-radius: 28px; overflow: hidden"><img src="images/g_menu.webp" alt="Гайд «Меню для твоего стройного тела»" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
+            <div class="gc" style="flex: 0 0 278px; height: 345px; border-radius: 28px; overflow: hidden; background: #212A36"><img src="images/p_motiv.webp" alt="Подкаст «Ловушка мотивации»" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 0%; display: block"></div>
+            <div class="gc" style="flex: 0 0 236px; height: 345px; border-radius: 28px; overflow: hidden; background: #212A36"><img src="images/p_trig.webp" alt="Гид «Продукты-триггеры»" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 0%; display: block"></div>
+            <div class="gc" style="flex: 0 0 253px; height: 345px; border-radius: 28px; overflow: hidden; background: #212A36; margin-right: 0"><img src="images/p_sweet.webp" alt="Подборка сладостей" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 0%; display: block"></div>
           </div>
         
       </div>
@@ -352,7 +373,7 @@ body{margin:0;background:#EDE6E0}
 
   <!-- ===== СТАРТ ПОТОКА · гантели растворены в фон ===== -->
   <section id="d-join" style="position: relative; margin-top: 80px; height: 640px">
-    <img loading="lazy" src="images/dumb.webp" alt="" style="position: absolute; right: 0; top: 0; width: 62%; height: 100%; object-fit: cover; object-position: 50% 52%; display: block; -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 38%), linear-gradient(to bottom, transparent 0%, #000 22%, #000 78%, transparent 100%); -webkit-mask-composite: source-in; mask-image: linear-gradient(to right, transparent 0%, #000 38%), linear-gradient(to bottom, transparent 0%, #000 22%, #000 78%, transparent 100%); mask-composite: intersect">
+    <img src="images/dumb.webp" alt="" style="position: absolute; right: 0; top: 0; width: 62%; height: 100%; object-fit: cover; object-position: 50% 52%; display: block; -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 38%), linear-gradient(to bottom, transparent 0%, #000 22%, #000 78%, transparent 100%); -webkit-mask-composite: source-in; mask-image: linear-gradient(to right, transparent 0%, #000 38%), linear-gradient(to bottom, transparent 0%, #000 22%, #000 78%, transparent 100%); mask-composite: intersect">
     <div class="wrap" style="position: relative; height: 100%; display: flex; flex-direction: column; justify-content: center; gap: 18px">
       <span class="rv" style="font-size: 14px; font-weight: 700; letter-spacing: 0.16em; color: #7A6662">СТАРТ ПОТОКА</span>
       <div class="rv" style="display: flex; align-items: flex-end; gap: 22px">
