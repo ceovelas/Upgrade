@@ -102,20 +102,22 @@ main{max-width:1180px!important;min-height:calc(100vh - 80px)!important;display:
         <button type="button" id="back" class="btn-back" aria-label="Назад" disabled><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2A211F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg></button>
         <button type="submit" id="next" class="btn-next" disabled><span id="nextLabel">Далее</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
       </div>
-      <p style="margin:-12px 0 28px;font-size:12px;line-height:1.5;color:#7A6662;text-align:center">Нажимая «Записаться», ты соглашаешься с <a href="index.html#privacy" style="color:#7A6662">политикой обработки персональных данных</a> и на получение информационной рассылки</p>
+      <p style="margin:-12px 0 28px;font-size:12px;line-height:1.5;color:#7A6662;text-align:center">Нажимая «Записаться», ты даёшь <a href="consent.html" style="color:#7A6662">согласие на обработку персональных данных</a> по <a href="privacy.html" style="color:#7A6662">политике</a> и <a href="ads.html" style="color:#7A6662">согласие на рассылку</a></p>
     </form>
 
     <div id="done" style="display:none;margin-top:40px;flex-direction:column;gap:14px">
       <h1 class="u" style="margin:0;font-weight:700;font-size:26px;line-height:1.15;text-transform:uppercase">Ты в списке, <span id="hi" style="color:#D9798A"></span></h1>
-      <p style="margin:0;font-size:15.5px;line-height:1.55;color:#5E4D49">16 ноября открываем продажи. Запусти моего бота в Telegram: там ты первой получишь ссылку на оплату и все новости потока.</p>
-      <a href="https://t.me/leranach" style="margin-top:10px;height:60px;border-radius:18px;background:#2A211F;color:#F7F2ED;font-weight:800;font-size:16px;text-decoration:none;display:flex;align-items:center;justify-content:center">Открыть бота в Telegram</a>
+      <p style="margin:0;font-size:15.5px;line-height:1.55;color:#5E4D49">Последний шаг: нажми «Старт» в моём боте и забери гайд <b>«Здоровая тарелка»</b> в подарок. Туда же 16 ноября придёт ссылка на оплату.</p>
+      <a id="botlink" href="https://t.me/leranachevkina_bot" style="margin-top:10px;height:60px;border-radius:18px;background:#2A211F;color:#F7F2ED;font-weight:800;font-size:16px;text-decoration:none;display:flex;align-items:center;justify-content:center">Забрать гайд в Telegram</a>
+      <p id="autonote" style="margin:0;text-align:center;font-size:13px;color:#7A6662">Открываем Telegram… Если не открылся сам, нажми кнопку выше</p>
       <a href="index.html" style="text-align:center;font-size:14px;font-weight:600;color:#7A6662;padding:12px">Вернуться на сайт</a>
     </div>
   </div>
 </main>
 <script>
-// Куда отправлять ответы: вставь адрес (Google Apps Script, вебхук бота, Make/Zapier). Пусто = никуда не отправляется.
-var ENDPOINT = '';
+// Вебхук Make (модуль Webhooks → Custom webhook) и юзернейм бота без @
+var ENDPOINT = 'https://hook.eu1.make.com/xx76m8ewet28kl7kkjqke4865n93spa9';
+var BOT = 'leranachevkina_bot';
 (function(){
   var step=0, last=3, f=document.getElementById('f');
   var steps=[].slice.call(document.querySelectorAll('.step'));
@@ -144,9 +146,13 @@ var ENDPOINT = '';
   f.addEventListener('submit',function(e){
     e.preventDefault(); if(!ok()) return;
     if(step<last){step++;render();return}
-    var data={name:$('f-name').value.trim(),contact:$('f-tg').value.trim(),goals:chosen('goals'),blocks:chosen('blocks'),consent:true,ads:true,date:new Date().toISOString()};
-    if(ENDPOINT){try{fetch(ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain'},body:JSON.stringify(data)})}catch(err){}}
+    var code=Math.random().toString(36).slice(2,8)+Date.now().toString(36).slice(-4);
+    var data={code:code,name:$('f-name').value.trim(),contact:$('f-tg').value.trim(),goals:chosen('goals').join(', '),blocks:chosen('blocks').join(', ')||'не указано',consent:'да',date:new Date().toLocaleString('ru-RU'),device:(window.innerWidth<1024?'телефон':'ПК')};
+    if(ENDPOINT){try{fetch(ENDPOINT,{method:'POST',mode:'no-cors',keepalive:true,body:new URLSearchParams(data)})}catch(err){}}
+    var link='https://t.me/'+BOT+'?start='+code;
+    $('botlink').href=link;
     $('hi').textContent=data.name; f.style.display='none'; $('done').style.display='flex';
+    setTimeout(function(){window.location.href=link},1600);
   });
   render();
 })();
