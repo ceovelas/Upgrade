@@ -73,6 +73,31 @@ html{scroll-behavior:smooth}
 .rv{animation:rv linear both;animation-timeline:view();animation-range:entry 5% cover 25%}
 }
 
+
+/* ---------- расписание · стопка ---------- */
+.sch-stack{display:flex;flex-direction:column;gap:28px}
+.wk{position:-webkit-sticky;position:sticky;background:#FFFFFF;border-radius:30px;box-shadow:0 -12px 30px -20px rgba(42,33,31,.45)}
+.wk ol{margin:0;padding:0;list-style:none}
+.srow{position:relative;display:grid;grid-template-columns:46px 22px minmax(0,1fr);column-gap:10px;padding-bottom:16px}
+.srow:not(.last)::before{content:"";position:absolute;left:66px;top:22px;bottom:-4px;width:2px;background:#2A211F}
+.srow.last{padding-bottom:0}
+.sday{font-family:'Unbounded',sans-serif;font-weight:700;font-size:14px;line-height:1.4}
+.sday span{margin-left:4px;font-family:'Manrope',sans-serif;font-weight:700;font-size:12px;color:#7A6662}
+.sdot{width:14px;height:14px;border-radius:50%;margin:4px 0 0 4px;position:relative;z-index:1;box-sizing:border-box}
+.sti{margin:0;font-size:15.5px;line-height:1.3;font-weight:700}
+.ssub{margin:3px 0 0;font-size:13px;line-height:1.4;font-weight:600;color:#A0606A}
+.wk-dates{height:32px;padding:0 12px;border-radius:99px;background:#F7EDEB;font-size:13px;font-weight:700;color:#7A6662;display:inline-flex;align-items:center;white-space:nowrap}
+.v-d .wk{border-radius:40px;padding:44px 56px;display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:40px;align-items:start}
+.v-d .srow{grid-template-columns:76px 28px minmax(0,1fr);column-gap:16px;padding-bottom:22px}
+.v-d .srow:not(.last)::before{left:105px;top:28px;bottom:-2px;width:2.5px}
+.v-d .srow.last{padding-bottom:0}
+.v-d .sday{font-size:20px;line-height:1.35}
+.v-d .sday span{font-size:15px;margin-left:6px}
+.v-d .sdot{width:18px;height:18px;margin:6px 0 0 5px}
+.v-d .sti{font-size:21px;line-height:1.3}
+.v-d .ssub{font-size:16px;margin-top:4px}
+.v-d .wk-dates{height:40px;padding:0 18px;font-size:15px}
+
 /* ---------- переключение ---------- */
 body{margin:0;background:#EDE6E0}
 .v-d{display:none}
@@ -83,7 +108,7 @@ body{margin:0;background:#EDE6E0}
 <body>
 <div class="v-m">
 <div style="background: #EDE6E0; color: #2A211F; font-family: 'Manrope', sans-serif; min-height: 100%">
-<main style="max-width: 440px; margin: 0 auto; background: #F7F2ED; overflow: hidden">
+<main style="max-width: 440px; margin: 0 auto; background: #F7F2ED; overflow: hidden; overflow: clip">
 
   <!-- ========== 1 · ПЕРВЫЙ ЭКРАН ========== -->
   <section style="position: relative; height: 800px; overflow: hidden">
@@ -100,9 +125,10 @@ body{margin:0;background:#EDE6E0}
         </summary>
         <div class="drawer" style="position: absolute; left: 0; right: 0; top: 62px; z-index: 20; background: #FFFFFF; border-radius: 24px; padding: 10px; box-shadow: 0 24px 50px -24px rgba(42,33,31,0.45); display: flex; flex-direction: column">
           <a href="#program" style="padding: 16px 14px; font-weight: 700; font-size: 16px; text-decoration: none; border-bottom: 1px solid rgba(42,33,31,0.08)">Что внутри потока</a>
+          <a href="#schedule" style="padding: 16px 14px; font-weight: 700; font-size: 16px; text-decoration: none; border-bottom: 1px solid rgba(42,33,31,0.08)">Расписание</a>
           <a href="#guides" style="padding: 16px 14px; font-weight: 700; font-size: 16px; text-decoration: none; border-bottom: 1px solid rgba(42,33,31,0.08)">Гайды и подкасты</a>
           <a href="#faq" style="padding: 16px 14px; font-weight: 700; font-size: 16px; text-decoration: none">Вопросы</a>
-          <a href="anketa.html" style="margin-top: 6px; height: 52px; border-radius: 16px; background: #2A211F; color: #F7F2ED; font-weight: 800; font-size: 15px; text-decoration: none; display: flex; align-items: center; justify-content: center">Присоединиться</a>
+          <a href="https://t.me/leranachevkina_bot" target="_blank" rel="noopener" style="margin-top: 6px; height: 52px; border-radius: 16px; background: #2A211F; color: #F7F2ED; font-weight: 800; font-size: 15px; text-decoration: none; display: flex; align-items: center; justify-content: center">Присоединиться</a>
         </div>
       </details>
     </nav>
@@ -112,7 +138,7 @@ body{margin:0;background:#EDE6E0}
     <div style="position: absolute; z-index: 2; left: 0; right: 0; bottom: 34px; padding: 0 20px; display: flex; flex-direction: column; gap: 14px; text-align: center; align-items: center">
       <h1 class="u" style="margin: 0; font-weight: 700; font-size: 25px; line-height: 1.15; letter-spacing: -0.02em; text-transform: uppercase">Новая версия тебя<br><span style="color: #D9798A">за 4 недели</span></h1>
       <p style="margin: 0; font-size: 15.5px; line-height: 1.5; color: #5E4D49; max-width: 330px">Тренировки дома, питание без срывов и чат со мной на весь поток</p>
-      <a href="anketa.html" style="margin-top: 6px; width: 100%; height: 58px; border-radius: 18px; background: #2A211F; color: #F7F2ED; font-weight: 800; font-size: 16px; text-decoration: none; display: flex; align-items: center; justify-content: center">Присоединиться</a>
+      <a href="https://t.me/leranachevkina_bot" target="_blank" rel="noopener" style="margin-top: 6px; width: 100%; height: 58px; border-radius: 18px; background: #2A211F; color: #F7F2ED; font-weight: 800; font-size: 16px; text-decoration: none; display: flex; align-items: center; justify-content: center">Присоединиться</a>
       <span style="font-size: 12.5px; color: #7A6662">Старт потока: 24 ноября</span>
     </div>
   </section>
@@ -144,6 +170,61 @@ body{margin:0;background:#EDE6E0}
         <p style="margin: 0; font-size: 15px; line-height: 1.55; color: #5E4D49">Закрытый чат на все 4 недели, где девочки идут к одной цели вместе. Раз в неделю прямой эфир: разбираю ваши вопросы и рационы. Обратная связь от меня каждые 2–3 дня.</p>
       </div>
     </article>
+  </section>
+
+  <!-- ========== 2.5 · РАСПИСАНИЕ ========== -->
+  <section id="schedule" style="padding: 0 14px 56px">
+    <h2 class="u" style="margin: 0 6px 24px; font-weight: 600; font-size: 22px; line-height: 1.2; text-transform: uppercase">Расписание <span style="color: #D9798A">по неделям</span></h2>
+    <div class="sch-stack">
+<article class="wk" style="top: 16px; padding: 22px 18px 24px">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 20px"><h3 class="u" style="margin: 0; font-weight: 700; font-size: 22px; line-height: 1; text-transform: uppercase; letter-spacing: -0.02em">Неделя <span style="color: #D9798A">1</span></h3><span class="wk-dates">24–30 ноября</span></div>
+<ol>
+<li class="srow"><span class="sday">ВТ<span>24</span></span><span class="sdot" style="background: #E3A0AE" aria-hidden="true"></span><div><p class="sti">Тренировка 1</p><p class="ssub">гайд «Здоровая тарелка», меню и список продуктов</p><p class="ssub">мотивационный подкаст, точка А</p></div></li>
+<li class="srow"><span class="sday">СР<span>25</span></span><span class="sdot" style="background: #2A211F" aria-hidden="true"></span><div><p class="sti">Подкаст «Вся правда о КБЖУ»</p><p class="ssub">гайд «ПП-рецепты дома», подборка сладостей</p></div></li>
+<li class="srow"><span class="sday">ЧТ<span>26</span></span><span class="sdot" style="background: #E3A0AE" aria-hidden="true"></span><div><p class="sti">Тренировка 2</p><p class="ssub">подкаст «Кортизоловый живот», гайд «Без вздутия»</p></div></li>
+<li class="srow"><span class="sday">ПТ<span>27</span></span><span class="sdot" style="background: #2A211F" aria-hidden="true"></span><div><p class="sti">Подкаст «Целлюлит и отеки»</p><p class="ssub">гайд «Кусочничество»</p></div></li>
+<li class="srow"><span class="sday">СБ<span>28</span></span><span class="sdot" style="background: #E3A0AE" aria-hidden="true"></span><div><p class="sti">Тренировка 3</p><p class="ssub">гайд «Код упругой кожи», подкаст «Массажи и скрабы»</p></div></li>
+<li class="srow"><span class="sday">ВС<span>29</span></span><span class="sdot" style="background: #FFFFFF; border: 3.5px solid #2A211F" aria-hidden="true"></span><div><p class="sti">Прямой эфир</p><p class="ssub">разбираем первую неделю</p></div></li>
+<li class="srow last"><span class="sday">ПН<span>30</span></span><span class="sdot" style="background: #2A211F" aria-hidden="true"></span><div><p class="sti">Разгрузка</p><p class="ssub">итоги недели по плюсикам</p></div></li>
+</ol>
+</article>
+<article class="wk" style="top: 30px; padding: 22px 18px 24px">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 20px"><h3 class="u" style="margin: 0; font-weight: 700; font-size: 22px; line-height: 1; text-transform: uppercase; letter-spacing: -0.02em">Неделя <span style="color: #D9798A">2</span></h3><span class="wk-dates">1–7 декабря</span></div>
+<ol>
+<li class="srow"><span class="sday">ВТ<span>1</span></span><span class="sdot" style="background: #E3A0AE" aria-hidden="true"></span><div><p class="sti">Тренировка 4</p><p class="ssub">подкаст «Почему мы сдаемся», гайд «Зацикленное мышление»</p></div></li>
+<li class="srow"><span class="sday">СР<span>2</span></span><span class="sdot" style="background: #E3A0AE" aria-hidden="true"></span><div><p class="sti">Тренировка на живот</p><p class="ssub">подкаст «Мышцы живота», гайд «Вкусная вода»</p></div></li>
+<li class="srow"><span class="sday">ЧТ<span>3</span></span><span class="sdot" style="background: #E3A0AE" aria-hidden="true"></span><div><p class="sti">Тренировка 5</p><p class="ssub">легкий день</p></div></li>
+<li class="srow"><span class="sday">ПТ<span>4</span></span><span class="sdot" style="background: #2A211F" aria-hidden="true"></span><div><p class="sti">Раскатка на ролле</p><p class="ssub">подкаст «МФР: ролл и мячик»</p></div></li>
+<li class="srow"><span class="sday">СБ<span>5</span></span><span class="sdot" style="background: #E3A0AE" aria-hidden="true"></span><div><p class="sti">Тренировка 6</p><p class="ssub">готовим вопросы к эфиру</p></div></li>
+<li class="srow"><span class="sday">ВС<span>6</span></span><span class="sdot" style="background: #FFFFFF; border: 3.5px solid #2A211F" aria-hidden="true"></span><div><p class="sti">Эфир с разбором вопросов</p></div></li>
+<li class="srow last"><span class="sday">ПН<span>7</span></span><span class="sdot" style="background: #2A211F" aria-hidden="true"></span><div><p class="sti">Разгрузка</p><p class="ssub">итоги недели по плюсикам</p></div></li>
+</ol>
+</article>
+<article class="wk" style="top: 44px; padding: 22px 18px 24px">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 20px"><h3 class="u" style="margin: 0; font-weight: 700; font-size: 22px; line-height: 1; text-transform: uppercase; letter-spacing: -0.02em">Неделя <span style="color: #D9798A">3</span></h3><span class="wk-dates">8–14 декабря</span></div>
+<ol>
+<li class="srow"><span class="sday">ВТ<span>8</span></span><span class="sdot" style="background: #E3A0AE" aria-hidden="true"></span><div><p class="sti">Тренировка 7</p><p class="ssub">гайд «Альтернатива продуктам»</p></div></li>
+<li class="srow"><span class="sday">СР<span>9</span></span><span class="sdot" style="background: #2A211F" aria-hidden="true"></span><div><p class="sti">Подкаст «Неуверенность и неприятие себя»</p><p class="ssub">гайд «Дорогой дофамин и дешевый»</p></div></li>
+<li class="srow"><span class="sday">ЧТ<span>10</span></span><span class="sdot" style="background: #E3A0AE" aria-hidden="true"></span><div><p class="sti">Тренировка 8</p><p class="ssub">подкаст «Тяга к сладкому и соленому»</p></div></li>
+<li class="srow"><span class="sday">ПТ<span>11</span></span><span class="sdot" style="background: #2A211F" aria-hidden="true"></span><div><p class="sti">Подкаст «Срывы на выходных»</p><p class="ssub">гайд «Как пережить застолье»</p></div></li>
+<li class="srow"><span class="sday">СБ<span>12</span></span><span class="sdot" style="background: #E3A0AE" aria-hidden="true"></span><div><p class="sti">Тренировка 9</p><p class="ssub">готовим вопросы к эфиру</p></div></li>
+<li class="srow"><span class="sday">ВС<span>13</span></span><span class="sdot" style="background: #FFFFFF; border: 3.5px solid #2A211F" aria-hidden="true"></span><div><p class="sti">Эфир</p><p class="ssub">итоги недели по плюсикам</p></div></li>
+<li class="srow last"><span class="sday">ПН<span>14</span></span><span class="sdot" style="background: #2A211F" aria-hidden="true"></span><div><p class="sti">Разгрузка</p><p class="ssub">отдыхаем и закрепляем</p></div></li>
+</ol>
+</article>
+<article class="wk" style="top: 58px; padding: 22px 18px 24px">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 20px"><h3 class="u" style="margin: 0; font-weight: 700; font-size: 22px; line-height: 1; text-transform: uppercase; letter-spacing: -0.02em">Неделя <span style="color: #D9798A">4</span></h3><span class="wk-dates">15–21 декабря</span></div>
+<ol>
+<li class="srow"><span class="sday">ВТ<span>15</span></span><span class="sdot" style="background: #E3A0AE" aria-hidden="true"></span><div><p class="sti">Тренировка 10</p><p class="ssub">подкаст «Как добрать белок», гайд «Дисциплина и привычки»</p></div></li>
+<li class="srow"><span class="sday">СР<span>16</span></span><span class="sdot" style="background: #2A211F" aria-hidden="true"></span><div><p class="sti">Подкаст «Маленькие ежедневные шаги»</p></div></li>
+<li class="srow"><span class="sday">ЧТ<span>17</span></span><span class="sdot" style="background: #E3A0AE" aria-hidden="true"></span><div><p class="sti">Тренировка 11</p><p class="ssub">подкаст «Как двигаться, когда нет настроения»</p></div></li>
+<li class="srow"><span class="sday">ПТ<span>18</span></span><span class="sdot" style="background: #2A211F" aria-hidden="true"></span><div><p class="sti">Подкаст «Другие лучше меня»</p></div></li>
+<li class="srow"><span class="sday">СБ<span>19</span></span><span class="sdot" style="background: #E3A0AE" aria-hidden="true"></span><div><p class="sti">Тренировка 12</p><p class="ssub">гайд «Как внедрять новое без выгорания», трекер привычек</p></div></li>
+<li class="srow"><span class="sday">ВС<span>20</span></span><span class="sdot" style="background: #FFFFFF; border: 3.5px solid #2A211F" aria-hidden="true"></span><div><p class="sti">Финальный эфир и точка Б</p><p class="ssub">фото и замеры утром</p></div></li>
+<li class="srow last"><span class="sday">ПН<span>21</span></span><span class="sdot" style="background: #E3A0AE" aria-hidden="true"></span><div><p class="sti">Подводим итоги потока</p><p class="ssub">празднуем ваши результаты</p></div></li>
+</ol>
+</article>
+    </div>
   </section>
 
   <!-- ========== 3 · БИБЛИОТЕКА ========== -->
@@ -204,7 +285,7 @@ body{margin:0;background:#EDE6E0}
     </div>
     <div style="position: absolute; left: 20px; right: 20px; bottom: 36px; display: flex; flex-direction: column; gap: 12px; align-items: center; text-align: center">
       <p style="margin: 0; font-size: 15.5px; line-height: 1.5; font-weight: 600; max-width: 320px">4 недели тренировок, питания и поддержки. Начинаем вместе</p>
-      <a href="anketa.html" style="width: 100%; height: 60px; border-radius: 18px; background: #2A211F; color: #F7F2ED; font-weight: 800; font-size: 16px; text-decoration: none; display: flex; align-items: center; justify-content: center">Присоединиться</a>
+      <a href="https://t.me/leranachevkina_bot" target="_blank" rel="noopener" style="width: 100%; height: 60px; border-radius: 18px; background: #2A211F; color: #F7F2ED; font-weight: 800; font-size: 16px; text-decoration: none; display: flex; align-items: center; justify-content: center">Присоединиться</a>
     </div>
   </section>
 
@@ -256,17 +337,18 @@ body{margin:0;background:#EDE6E0}
 </div>
 </div>
 <div class="v-d">
-<div style="background: #F7F2ED; color: #2A211F; font-family: 'Manrope', sans-serif; overflow: hidden">
+<div style="background: #F7F2ED; color: #2A211F; font-family: 'Manrope', sans-serif; overflow: hidden; overflow: clip">
 
   <!-- ===== ШАПКА ===== -->
   <header class="wrap" style="display: flex; align-items: center; justify-content: space-between; height: 92px">
     <span class="u" style="font-weight: 700; font-size: 16px">Leranachevkina<span style="color: #D9798A">.</span></span>
     <nav style="display: flex; gap: 40px; font-size: 15px; font-weight: 600">
       <a href="#d-program" style="text-decoration: none">Что внутри потока</a>
+      <a href="#d-schedule" style="text-decoration: none">Расписание</a>
       <a href="#d-guides" style="text-decoration: none">Гайды и подкасты</a>
       <a href="#d-faq" style="text-decoration: none">Вопросы</a>
     </nav>
-    <a href="anketa.html" style="height: 46px; padding: 0 22px; border-radius: 14px; background: #2A211F; color: #F7F2ED; font-size: 14px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center">Присоединиться</a>
+    <a href="https://t.me/leranachevkina_bot" target="_blank" rel="noopener" style="height: 46px; padding: 0 22px; border-radius: 14px; background: #2A211F; color: #F7F2ED; font-size: 14px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center">Присоединиться</a>
   </header>
 
   <!-- ===== ПЕРВЫЙ ЭКРАН · баннер, Лера выходит за верх ===== -->
@@ -283,7 +365,7 @@ body{margin:0;background:#EDE6E0}
         <p class="u" style="margin: 4px 0 0; font-weight: 600; font-size: 26px; line-height: 1.2; text-transform: uppercase">Новая версия тебя за 4 недели</p>
         <p style="margin: 0; font-size: 18px; line-height: 1.5; font-weight: 600; max-width: 470px">Тренировки дома, питание без срывов и чат со мной на весь поток</p>
         <div style="display: flex; gap: 12px; margin-top: 10px">
-          <a href="anketa.html" style="height: 60px; padding: 0 34px; border-radius: 18px; background: #2A211F; color: #F7F2ED; font-weight: 800; font-size: 16px; text-decoration: none; display: inline-flex; align-items: center">Присоединиться</a>
+          <a href="https://t.me/leranachevkina_bot" target="_blank" rel="noopener" style="height: 60px; padding: 0 34px; border-radius: 18px; background: #2A211F; color: #F7F2ED; font-weight: 800; font-size: 16px; text-decoration: none; display: inline-flex; align-items: center">Присоединиться</a>
           <a href="#d-program" style="height: 60px; padding: 0 28px; border-radius: 18px; background: rgba(255,255,255,0.25); color: #FFFFFF; font-weight: 700; font-size: 16px; text-decoration: none; display: inline-flex; align-items: center">Что внутри</a>
         </div>
       </div>
@@ -317,6 +399,61 @@ body{margin:0;background:#EDE6E0}
           <p style="margin: 0; font-size: 15.5px; line-height: 1.6; color: #5E4D49">Закрытый чат на все 4 недели, где девочки идут к одной цели вместе. Раз в неделю прямой эфир: разбираю ваши вопросы и рационы. Обратная связь от меня каждые 2–3 дня.</p>
         </div>
       </article>
+    </div>
+  </section>
+
+  <!-- ===== РАСПИСАНИЕ · стопка ===== -->
+  <section id="d-schedule" class="wrap" style="padding-top: 60px; padding-bottom: 40px">
+    <h2 class="u rv" style="margin: 0 0 36px; font-weight: 600; font-size: 40px; line-height: 1.15; text-transform: uppercase">Расписание <span style="color: #D9798A">по неделям</span></h2>
+    <div class="sch-stack" style="max-width: 1100px; gap: 36px">
+<article class="wk" style="top: 40px">
+<div style="display: flex; flex-direction: column; align-items: flex-start; gap: 18px"><h3 class="u" style="margin: 0; font-weight: 700; font-size: 44px; line-height: 1; text-transform: uppercase; letter-spacing: -0.03em">Неделя <span style="color: #D9798A">1</span></h3><span class="wk-dates">24–30 ноября</span></div>
+<ol>
+<li class="srow"><span class="sday">ВТ<span>24</span></span><span class="sdot" style="background: #E3A0AE" aria-hidden="true"></span><div><p class="sti">Тренировка 1</p><p class="ssub">гайд «Здоровая тарелка», меню и список продуктов</p><p class="ssub">мотивационный подкаст, точка А</p></div></li>
+<li class="srow"><span class="sday">СР<span>25</span></span><span class="sdot" style="background: #2A211F" aria-hidden="true"></span><div><p class="sti">Подкаст «Вся правда о КБЖУ»</p><p class="ssub">гайд «ПП-рецепты дома», подборка сладостей</p></div></li>
+<li class="srow"><span class="sday">ЧТ<span>26</span></span><span class="sdot" style="background: #E3A0AE" aria-hidden="true"></span><div><p class="sti">Тренировка 2</p><p class="ssub">подкаст «Кортизоловый живот», гайд «Без вздутия»</p></div></li>
+<li class="srow"><span class="sday">ПТ<span>27</span></span><span class="sdot" style="background: #2A211F" aria-hidden="true"></span><div><p class="sti">Подкаст «Целлюлит и отеки»</p><p class="ssub">гайд «Кусочничество»</p></div></li>
+<li class="srow"><span class="sday">СБ<span>28</span></span><span class="sdot" style="background: #E3A0AE" aria-hidden="true"></span><div><p class="sti">Тренировка 3</p><p class="ssub">гайд «Код упругой кожи», подкаст «Массажи и скрабы»</p></div></li>
+<li class="srow"><span class="sday">ВС<span>29</span></span><span class="sdot" style="background: #FFFFFF; border: 3.5px solid #2A211F" aria-hidden="true"></span><div><p class="sti">Прямой эфир</p><p class="ssub">разбираем первую неделю</p></div></li>
+<li class="srow last"><span class="sday">ПН<span>30</span></span><span class="sdot" style="background: #2A211F" aria-hidden="true"></span><div><p class="sti">Разгрузка</p><p class="ssub">итоги недели по плюсикам</p></div></li>
+</ol>
+</article>
+<article class="wk" style="top: 58px">
+<div style="display: flex; flex-direction: column; align-items: flex-start; gap: 18px"><h3 class="u" style="margin: 0; font-weight: 700; font-size: 44px; line-height: 1; text-transform: uppercase; letter-spacing: -0.03em">Неделя <span style="color: #D9798A">2</span></h3><span class="wk-dates">1–7 декабря</span></div>
+<ol>
+<li class="srow"><span class="sday">ВТ<span>1</span></span><span class="sdot" style="background: #E3A0AE" aria-hidden="true"></span><div><p class="sti">Тренировка 4</p><p class="ssub">подкаст «Почему мы сдаемся», гайд «Зацикленное мышление»</p></div></li>
+<li class="srow"><span class="sday">СР<span>2</span></span><span class="sdot" style="background: #E3A0AE" aria-hidden="true"></span><div><p class="sti">Тренировка на живот</p><p class="ssub">подкаст «Мышцы живота», гайд «Вкусная вода»</p></div></li>
+<li class="srow"><span class="sday">ЧТ<span>3</span></span><span class="sdot" style="background: #E3A0AE" aria-hidden="true"></span><div><p class="sti">Тренировка 5</p><p class="ssub">легкий день</p></div></li>
+<li class="srow"><span class="sday">ПТ<span>4</span></span><span class="sdot" style="background: #2A211F" aria-hidden="true"></span><div><p class="sti">Раскатка на ролле</p><p class="ssub">подкаст «МФР: ролл и мячик»</p></div></li>
+<li class="srow"><span class="sday">СБ<span>5</span></span><span class="sdot" style="background: #E3A0AE" aria-hidden="true"></span><div><p class="sti">Тренировка 6</p><p class="ssub">готовим вопросы к эфиру</p></div></li>
+<li class="srow"><span class="sday">ВС<span>6</span></span><span class="sdot" style="background: #FFFFFF; border: 3.5px solid #2A211F" aria-hidden="true"></span><div><p class="sti">Эфир с разбором вопросов</p></div></li>
+<li class="srow last"><span class="sday">ПН<span>7</span></span><span class="sdot" style="background: #2A211F" aria-hidden="true"></span><div><p class="sti">Разгрузка</p><p class="ssub">итоги недели по плюсикам</p></div></li>
+</ol>
+</article>
+<article class="wk" style="top: 76px">
+<div style="display: flex; flex-direction: column; align-items: flex-start; gap: 18px"><h3 class="u" style="margin: 0; font-weight: 700; font-size: 44px; line-height: 1; text-transform: uppercase; letter-spacing: -0.03em">Неделя <span style="color: #D9798A">3</span></h3><span class="wk-dates">8–14 декабря</span></div>
+<ol>
+<li class="srow"><span class="sday">ВТ<span>8</span></span><span class="sdot" style="background: #E3A0AE" aria-hidden="true"></span><div><p class="sti">Тренировка 7</p><p class="ssub">гайд «Альтернатива продуктам»</p></div></li>
+<li class="srow"><span class="sday">СР<span>9</span></span><span class="sdot" style="background: #2A211F" aria-hidden="true"></span><div><p class="sti">Подкаст «Неуверенность и неприятие себя»</p><p class="ssub">гайд «Дорогой дофамин и дешевый»</p></div></li>
+<li class="srow"><span class="sday">ЧТ<span>10</span></span><span class="sdot" style="background: #E3A0AE" aria-hidden="true"></span><div><p class="sti">Тренировка 8</p><p class="ssub">подкаст «Тяга к сладкому и соленому»</p></div></li>
+<li class="srow"><span class="sday">ПТ<span>11</span></span><span class="sdot" style="background: #2A211F" aria-hidden="true"></span><div><p class="sti">Подкаст «Срывы на выходных»</p><p class="ssub">гайд «Как пережить застолье»</p></div></li>
+<li class="srow"><span class="sday">СБ<span>12</span></span><span class="sdot" style="background: #E3A0AE" aria-hidden="true"></span><div><p class="sti">Тренировка 9</p><p class="ssub">готовим вопросы к эфиру</p></div></li>
+<li class="srow"><span class="sday">ВС<span>13</span></span><span class="sdot" style="background: #FFFFFF; border: 3.5px solid #2A211F" aria-hidden="true"></span><div><p class="sti">Эфир</p><p class="ssub">итоги недели по плюсикам</p></div></li>
+<li class="srow last"><span class="sday">ПН<span>14</span></span><span class="sdot" style="background: #2A211F" aria-hidden="true"></span><div><p class="sti">Разгрузка</p><p class="ssub">отдыхаем и закрепляем</p></div></li>
+</ol>
+</article>
+<article class="wk" style="top: 94px">
+<div style="display: flex; flex-direction: column; align-items: flex-start; gap: 18px"><h3 class="u" style="margin: 0; font-weight: 700; font-size: 44px; line-height: 1; text-transform: uppercase; letter-spacing: -0.03em">Неделя <span style="color: #D9798A">4</span></h3><span class="wk-dates">15–21 декабря</span></div>
+<ol>
+<li class="srow"><span class="sday">ВТ<span>15</span></span><span class="sdot" style="background: #E3A0AE" aria-hidden="true"></span><div><p class="sti">Тренировка 10</p><p class="ssub">подкаст «Как добрать белок», гайд «Дисциплина и привычки»</p></div></li>
+<li class="srow"><span class="sday">СР<span>16</span></span><span class="sdot" style="background: #2A211F" aria-hidden="true"></span><div><p class="sti">Подкаст «Маленькие ежедневные шаги»</p></div></li>
+<li class="srow"><span class="sday">ЧТ<span>17</span></span><span class="sdot" style="background: #E3A0AE" aria-hidden="true"></span><div><p class="sti">Тренировка 11</p><p class="ssub">подкаст «Как двигаться, когда нет настроения»</p></div></li>
+<li class="srow"><span class="sday">ПТ<span>18</span></span><span class="sdot" style="background: #2A211F" aria-hidden="true"></span><div><p class="sti">Подкаст «Другие лучше меня»</p></div></li>
+<li class="srow"><span class="sday">СБ<span>19</span></span><span class="sdot" style="background: #E3A0AE" aria-hidden="true"></span><div><p class="sti">Тренировка 12</p><p class="ssub">гайд «Как внедрять новое без выгорания», трекер привычек</p></div></li>
+<li class="srow"><span class="sday">ВС<span>20</span></span><span class="sdot" style="background: #FFFFFF; border: 3.5px solid #2A211F" aria-hidden="true"></span><div><p class="sti">Финальный эфир и точка Б</p><p class="ssub">фото и замеры утром</p></div></li>
+<li class="srow last"><span class="sday">ПН<span>21</span></span><span class="sdot" style="background: #E3A0AE" aria-hidden="true"></span><div><p class="sti">Подводим итоги потока</p><p class="ssub">празднуем ваши результаты</p></div></li>
+</ol>
+</article>
     </div>
   </section>
 
@@ -422,7 +559,7 @@ body{margin:0;background:#EDE6E0}
         </span>
       </div>
       <p class="rv" style="margin: 6px 0 0; font-size: 19px; line-height: 1.5; font-weight: 600; max-width: 440px">4 недели тренировок, питания и поддержки. Начинаем вместе</p>
-      <a class="rv" href="anketa.html" style="margin-top: 10px; align-self: flex-start; height: 64px; padding: 0 44px; border-radius: 18px; background: #2A211F; color: #F7F2ED; font-weight: 800; font-size: 17px; text-decoration: none; display: inline-flex; align-items: center">Присоединиться</a>
+      <a class="rv" href="https://t.me/leranachevkina_bot" target="_blank" rel="noopener" style="margin-top: 10px; align-self: flex-start; height: 64px; padding: 0 44px; border-radius: 18px; background: #2A211F; color: #F7F2ED; font-weight: 800; font-size: 17px; text-decoration: none; display: inline-flex; align-items: center">Присоединиться</a>
     </div>
   </section>
 
